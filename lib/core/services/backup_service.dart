@@ -37,11 +37,11 @@ class BackupService {
 
       for (final entry in newPrefs.entries) {
         final val = entry.value;
-        if (val is String) await prefs.setString(entry.key, val);
-        else if (val is bool) await prefs.setBool(entry.key, val);
-        else if (val is int) await prefs.setInt(entry.key, val);
-        else if (val is double) await prefs.setDouble(entry.key, val);
-        else if (val is List) await prefs.setStringList(entry.key, val.cast<String>());
+        if (val is String) { await prefs.setString(entry.key, val); }
+        else if (val is bool) { await prefs.setBool(entry.key, val); }
+        else if (val is int) { await prefs.setInt(entry.key, val); }
+        else if (val is double) { await prefs.setDouble(entry.key, val); }
+        else if (val is List) { await prefs.setStringList(entry.key, val.cast<String>()); }
       }
       return true;
     } catch (_) {

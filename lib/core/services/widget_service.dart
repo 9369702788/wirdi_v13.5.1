@@ -16,7 +16,7 @@ class WidgetService {
     } catch (_) {}
   }
 
-  static Future<void> updatePrayerTimes(PrayerTimings timings, String nextPrayerName, String nextPrayerTime) async {
+  static Future<void> updatePrayerTimes(dynamic timings, String nextPrayerName, String nextPrayerTime) async {
     try {
       await HomeWidget.saveWidgetData<String>('next_prayer_name', nextPrayerName);
       await HomeWidget.saveWidgetData<String>('next_prayer_time', nextPrayerTime);
