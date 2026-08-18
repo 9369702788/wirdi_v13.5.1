@@ -8,25 +8,25 @@ void showTajweedLegend(BuildContext context) {
   showDialog<void>(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text('Tajweed Rules'),
+      title: Text(l10n.tajweedLegendTitle),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Color coding for Quranic recitation rules:', style: const TextStyle(fontSize: 13, color: AppColors.mutedText)),
+            Text(l10n.tajweedLegendIntro, style: const TextStyle(fontSize: 13, color: AppColors.mutedText)),
             const SizedBox(height: 16),
-            _legendRow(AppColors.tajweedQalqalah, 'Qalqalah (Echoing)'),
-            _legendRow(AppColors.tajweedGhunnah, 'Ghunnah (Nasalization)'),
-            _legendRow(AppColors.tajweedIkhfa, 'Ikhfa (Hiding)'),
-            _legendRow(AppColors.tajweedIdghamGhunnah, 'Idgham with Ghunnah'),
-            _legendRow(AppColors.tajweedIdghamNoGhunnah, 'Idgham without Ghunnah'),
-            _legendRow(AppColors.tajweedIqlab, 'Iqlab (Conversion)'),
+            _legendRow(AppColors.tajweedQalqalah, l10n.tajweedQalqalahLabel),
+            _legendRow(AppColors.tajweedGhunnah, l10n.tajweedGhunnahLabel),
+            _legendRow(AppColors.tajweedIkhfa, l10n.tajweedIkhfaLabel),
+            _legendRow(AppColors.tajweedIdghamGhunnah, l10n.tajweedIdghamGhunnahLabel),
+            _legendRow(AppColors.tajweedIdghamNoGhunnah, l10n.tajweedIdghamNoGhunnahLabel),
+            _legendRow(AppColors.tajweedIqlab, l10n.tajweedIqlabLabel),
           ],
         ),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: Text('Close')),
+        TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.tajweedLegendClose)),
       ],
     ),
   );

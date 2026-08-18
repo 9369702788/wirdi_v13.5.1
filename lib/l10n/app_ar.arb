@@ -564,5 +564,14 @@
   "settingsImportBackup": "استيراد نسخة احتياطية",
   "settingsImportBackupSubtitle": "استعادة البيانات من ملف محفوظ مسبقًا",
   "settingsImportSuccess": "تم استعادة البيانات بنجاح! يرجى إعادة تشغيل التطبيق.",
-  "settingsImportError": "فشل استيراد النسخة الاحتياطية. تأكد من صحة الملف."
+  "settingsImportError": "فشل استيراد النسخة الاحتياطية. تأكد من صحة الملف.",
+  "tajweedLegendTitle": "أحكام التجويد",
+  "tajweedLegendIntro": "دليل الألوان لأحكام التجويد في القرآن الكريم:",
+  "tajweedQalqalahLabel": "قلقلة",
+  "tajweedGhunnahLabel": "غنة",
+  "tajweedIkhfaLabel": "إخفاء",
+  "tajweedIdghamGhunnahLabel": "إدغام بغنة",
+  "tajweedIdghamNoGhunnahLabel": "إدغام بغير غنة",
+  "tajweedIqlabLabel": "إقلاب",
+  "tajweedLegendClose": "إغلاق"
 }

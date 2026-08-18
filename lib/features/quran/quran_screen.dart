@@ -1,4 +1,3 @@
-import '../../core/services/tajweed_service.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -24,7 +23,6 @@ import '../../core/theme/app_theme.dart';
 import '../../l10n/generated/app_localizations.dart';
 import '../mushaf/mushaf_view_screen.dart';
 import '../../core/services/bookmark_service.dart';
-import '../bookmarks/bookmarks_screen.dart';
 import 'ayah_share_screen.dart';
 
 class QuranScreen extends StatefulWidget {

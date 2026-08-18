@@ -1,4 +1,3 @@
-import '../../core/services/widget_service.dart';
 import 'dart:async';
 import 'package:share_plus/share_plus.dart';
 import '../../core/models/hadith_models.dart';
