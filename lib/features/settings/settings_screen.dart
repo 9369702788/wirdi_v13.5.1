@@ -1,3 +1,4 @@
+import 'package:file_picker/file_picker.dart';
 import '../../core/services/backup_service.dart';
 import 'dart:async';
 
@@ -226,8 +227,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
-                        title: const Text('Tajweed Coloring'),
-                        subtitle: const Text('Color Quranic text based on Tajweed rules'),
+                        title: Text(l10n.settingsTajweedColoring),
+                        subtitle: Text(l10n.settingsTajweedColoringSubtitle),
                         value: appSettings.showTajweedColoring,
                         activeTrackColor: AppColors.primaryEmerald,
                         onChanged: (value) => appSettings.setShowTajweedColoring(value),
@@ -490,21 +491,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               const SizedBox(height: 20),
 
-                            _SectionLabel('Backup & Restore'),
+                            _SectionLabel(l10n.settingsBackupRestore),
               Card(
                 child: Column(
                   children: [
                     ListTile(
                       leading: const Icon(Icons.cloud_upload_outlined, color: AppColors.primaryEmerald),
-                      title: const Text('Export Backup'),
-                      subtitle: const Text('Save your progress and settings to a file'),
+                      title: Text(l10n.settingsExportBackup),
+                      subtitle: Text(l10n.settingsExportBackupSubtitle),
                       onTap: () => BackupService.exportBackup(),
                     ),
                     const Divider(height: 1),
                     ListTile(
                       leading: const Icon(Icons.cloud_download_outlined, color: AppColors.primaryEmerald),
-                      title: const Text('Import Backup'),
-                      subtitle: const Text('Restore data from a previously saved file'),
+                      title: Text(l10n.settingsImportBackup),
+                      subtitle: Text(l10n.settingsImportBackupSubtitle),
                       onTap: () async {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Select your wirdi_backup.json file to restore.')),

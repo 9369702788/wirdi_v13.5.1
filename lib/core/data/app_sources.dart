@@ -72,6 +72,7 @@ class AppSources {
   /// by [DailyQuote.translationFor].
   static const String hadithArabicEdition = 'ara-nawawi';
   static const Map<String, String> hadithTranslationEditionByLocale = {
+    'ar': 'ara-nawawi',
     'en': 'eng-nawawi',
     'tr': 'tur-nawawi',
   };
