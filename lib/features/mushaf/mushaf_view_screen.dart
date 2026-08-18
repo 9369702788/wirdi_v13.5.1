@@ -225,10 +225,13 @@ class _MushafPageViewState extends State<_MushafPageView> {
                         recognizer: _makeRecognizer(() => _playAyah(ayah)),
                         children: [
                           if (appSettings.showTajweedColoring)
-                            ...TajweedService.analyze(ayah.text).map((segment) => TextSpan(
-                                  text: segment.text,
-                                  style: TextStyle(color: TajweedService.colorFor(segment.rule)),
-                                ))
+                            ...TajweedService.analyze(ayah.text).map((segment) {
+                              final color = TajweedService.colorFor(segment.rule);
+                              return TextSpan(
+                                text: segment.text,
+                                style: color != null ? TextStyle(color: color) : null,
+                              );
+                            })
                           else
                             TextSpan(text: ayah.text),
                           TextSpan(text: ' \uFD3F${ayah.ayahNumber}\uFD3E '),
