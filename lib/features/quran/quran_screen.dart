@@ -510,8 +510,7 @@ class _SurahReaderScreenState extends State<SurahReaderScreen> {
   void initState() {
     super.initState();
 
-    // _surahAyahOffset = widget.allSurahs
-        .where((s) => s.number < widget.surah.number)
+    // _surahAyahOffset removed
         .fold(0, (sum, s) => sum + s.ayahs.length);
 
     for (final ayah in widget.surah.ayahs) {
@@ -728,7 +727,7 @@ class _SurahReaderScreenState extends State<SurahReaderScreen> {
   Future<void> _openMushafView() async {
     try {
       await MushafRepository.load();
-      final startPage = MushafRepository.firstPageForSurah(pages, widget.surah.number) ?? 1;
+      final startPage = MushafRepository.firstPageForSurah(await MushafRepository.load(), widget.surah.number) ?? 1;
       if (!mounted) return;
       Navigator.push(
         context,
