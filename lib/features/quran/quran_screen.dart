@@ -176,7 +176,7 @@ class _SurahListTabState extends State<_SurahListTab> {
               OutlinedButton.icon(
                 onPressed: () async {
                   try {
-                    final pages = await MushafRepository.load();
+                    await MushafRepository.load();
                     if (!context.mounted) return;
                     Navigator.push(
                       context,
@@ -500,7 +500,7 @@ class _SurahReaderScreenState extends State<SurahReaderScreen> {
   bool get _repeatCurrent => quranAudio.repeatCurrent;
   bool get _isBuffering => quranAudio.isBuffering;
 
-  late final int _surahAyahOffset; // sum of ayah counts of all surahs before this one
+  // _surahAyahOffset removed // sum of ayah counts of all surahs before this one
 
   bool _translationKickedOff = false;
 
@@ -510,7 +510,7 @@ class _SurahReaderScreenState extends State<SurahReaderScreen> {
   void initState() {
     super.initState();
 
-    _surahAyahOffset = widget.allSurahs
+    // _surahAyahOffset = widget.allSurahs
         .where((s) => s.number < widget.surah.number)
         .fold(0, (sum, s) => sum + s.ayahs.length);
 
@@ -727,7 +727,7 @@ class _SurahReaderScreenState extends State<SurahReaderScreen> {
 
   Future<void> _openMushafView() async {
     try {
-      final pages = await MushafRepository.load();
+      await MushafRepository.load();
       final startPage = MushafRepository.firstPageForSurah(pages, widget.surah.number) ?? 1;
       if (!mounted) return;
       Navigator.push(
